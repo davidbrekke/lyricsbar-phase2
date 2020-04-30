@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>lyrics bar</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="header">
+            <a href="/" class="logo header">
+                <h1 class="logo">lyrics bar</h1>
+            </a>
+            <div class="header-options">
+                <% if (user) { %>
+                <a class="header" href="/me/<%= user._id %>/songs">
+                    <div class="profile-btn"><%= user.username %></div>
+                </a>
+                <a class="footer header" href="/logout">
+                    logout
+                </a>
+                <% } else { %>
+                <a class="header" href="/login">
+                    <div class="login-btn">login</div>
+                </a>
+                <p class="header">or</p>
+                <a class="header" href="/register">
+                    <div class="register-btn">register</div>
+                </a>
+                <% } %>
+            </div>
+        </div>
+        <div class="app-content">
+            <%- body %>
+        </div>
+        <div class="footer">
+            <a target="_blank" href="http://github.com" class="footer">github</a>
+            <a href="/about" class="footer">about</a>
+        </div>
+    </div>
+</body>
+
+</html>

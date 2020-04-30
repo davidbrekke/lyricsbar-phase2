@@ -1,0 +1,494 @@
+/* variables */
+:root {
+    --background: #9692AF;
+  --white: rgb(255, 238, 219);
+  --whitehover: rgb(255, 238, 219, .80);
+  --blue: #AED9E0;
+  --bluehover: rgb(182, 234, 241);
+  --darkpurple: #4C3B4D;
+  --indigo: #0D3B66;
+  --red: #F2545B;
+  --redhover: rgb(250, 133, 139);
+  --lightpurple: #B8B8D1;
+  --content: rgb(184, 184, 209, .5);
+  --text: #333333;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: auto;
+  }
+  div.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+    background-color: var(--background);
+}
+div.app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* APP HEADER --------------------------------- */
+div.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 1rem 5rem;
+    color: var(--blue);
+}
+div.header-options {
+    display: flex;
+    align-items: center;
+}
+a.header {
+    margin: .5rem;
+}
+div.login-btn,
+div.register-btn,
+div.profile-btn {
+    background-color: var(--blue);
+    border-radius: .5rem;
+    color: var(--text);
+    padding: .5rem 1rem;
+}
+div.login-btn:hover,
+div.register-btn:hover,
+div.profile-btn:hover {
+    background-color: var(--bluehover);
+    transition: all 0.3s ease 0s;
+}
+p.header {
+    padding: 1rem;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+h1.logo {
+    color: var(--blue);
+}
+h1.logo:hover {
+    color: var(--bluehover);
+}
+/* APP FOOTER --------------------------------- */
+div.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--blue);
+}
+a.footer {
+    text-decoration: none;
+    color: var(--text);
+    background-color: var(--background);
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+}
+a.footer:hover{
+    background-color: var(--text);
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+    color: var(--white);
+    transition: all 0.1s ease 0s;
+}
+/* APP body --------------------------------- */
+
+/* home page */
+h2.home-page {
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+div.home-page {
+    display: flex;
+}
+div.home-page-songs,
+div.home-page-artists {
+    background-color: var(--content);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+div.search {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text);
+    padding: .5rem;
+    outline: none;
+    color: var(--text);
+    font-size: 12pt;
+}
+    
+label {
+        color: var(--blue);
+        align-items: center;
+        justify-content: center;
+        padding-right: .5rem;
+}
+
+div.songs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+div.song {
+    background-color: var(--white);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+div.song:hover{
+    background-color: var(--text);
+    color: var(--white);
+    transition: all .3s ease 0s;
+
+}
+/* artist page */
+div.artist-page {
+ background-color: var(--content);
+ border-radius: 1rem;
+ padding: 1rem 1.5rem;
+}
+div.artist-songs{
+ border-radius: 1rem;
+ padding: .5rem;
+}
+div.artist-selector {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+div.artist-header-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.artist-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: .5rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+div.fan-btn {
+background-color: var(--blue);
+border-radius: .25rem;
+padding: 1rem;
+}
+div.fan-btn:hover {
+    background-color: var(--bluehover);
+}
+div.unfan-btn {
+    background-color: var(--red);
+    border-radius: .25rem;
+    padding: .5rem;
+}
+div.unfan-btn:hover {
+    background-color: var(--redhover);
+}
+div.artist-select {
+    border-radius: .5rem;
+    padding:.5rem;
+    cursor: pointer;
+}
+div.artist-select:hover {
+    background-color: var(--bluehover);
+    transition: all .3s ease 0s;
+}
+div.selected {
+    background-color: var(--blue);
+}
+/* song page */
+div.song-page,
+div.comment-page {
+    background-color: var(--content);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1rem;
+   }
+   div.song-header,
+   div.comment-header {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       background-color: var(--white);
+       border-radius: .5rem;
+       padding: 1rem;
+   }
+   div.comment {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: .5rem;
+       margin: .5rem;
+       background-color: var(--darkpurple);
+       border-radius: .25rem;
+       color: var(--white);
+   }
+   h2.song-title,
+   h4.song-artist,
+   h5.song-album {
+       color: var(--text);
+       padding: .5rem;
+   }
+   div.song-selector {
+       display: flex;
+       align-items: center;
+       padding: .5rem;
+       justify-content: space-between;
+       margin-top: 1rem;
+   }
+   
+   div.song-select {
+       border-radius: .5rem;
+       padding:.5rem;
+       cursor: pointer;
+       margin: .5rem 1rem;
+   }
+   div.song-select:hover {
+       background-color: var(--bluehover);
+       transition: all .3s ease 0s;
+   }
+   div.selected {
+       background-color: var(--blue);
+   }
+   div.song-lyrics {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       align-items: center;
+        border-radius: 1rem;
+    padding: .5rem;
+    margin: 1rem;
+    background-color: var(--white);
+   }
+   p.song-lyrics {
+       color: var(--text);
+   }
+   div.song-update-delete-btns {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+   div.song-update-btn {
+       padding: .5rem 1rem;
+       margin: .5rem;
+       border-radius: .25rem;
+       background-color: var(--blue);
+   }
+   div.song-update-btn:hover {
+       background-color: var(--bluehover);
+   }
+   div.song-delete-btn:hover {
+    background-color: var(--redhover);
+}
+   div.song-delete-btn{
+    padding: .25rem .75rem;
+    margin: .5rem;
+    border-radius: .25rem;
+       background-color: var(--red);
+   }
+   form.add-comment {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   a.comment-author {
+       color: var(--white);
+   }
+   /* about page */
+   div.about {
+    background-color: var(--content);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+   }
+   h2.about,
+   h3.about {
+       padding-bottom: .5rem;
+   }
+   div.devs {
+       margin: 2rem;
+       background-color: var(--white);
+       border-radius: .5rem;
+       padding: 2rem 5rem;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       align-items: center;
+   }
+   h3.devs {
+       color: var(--blue);
+       padding-bottom: 1rem;
+   }
+   a.about{
+       margin: .5rem;
+       padding: .5rem;
+       border-radius: .25rem;
+   }
+   a.form-link {
+    padding: .5rem;
+    border-radius: .25rem;
+   }
+   a.about:hover,
+   a.form-link:hover{
+       background-color: var(--text);
+       color: var(--white);
+        transition: all .3s ease 0s;
+   }
+   div.about-info {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       align-items: center;
+       background-color: var(--white);
+       border-radius: .5rem;
+       padding: .5rem;
+   }
+   h4.about-stuff{
+       padding: .5rem;
+   }
+   /* register/login page */
+   div.register-page,
+   div.login-page {
+    background-color: var(--content);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   }
+   h2.register,
+   h2.login {
+       padding-bottom: 1rem;
+   }
+   form.register-form,
+   form.login-form {
+       background-color: var(--white);
+       border-radius: 1rem;
+       padding: 2rem;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-between;
+   }
+   button {
+       padding: .5rem 1rem;
+       border: none;
+       border-radius: .25rem;
+       background-color: var(--blue);
+       margin: 1rem;
+       color: var(--text);
+       cursor: pointer;
+   }
+   button:hover {
+       background-color: var(--bluehover);
+       transition: all .3s ease 0s;
+   }
+   button:disabled {
+       background-color: var(--white);
+       color: var(--white);
+       cursor: none;
+   }
+   /* profile page */
+   div.profile {
+    background-color: var(--content);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   }
+   div.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem;
+   }
+   div.profile-selector {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+div.profile-select {
+    border-radius: .5rem;
+    padding:.5rem;
+    cursor: pointer;
+    margin: .5rem 1rem;
+}
+div.profile-select:hover {
+    background-color: var(--bluehover);
+    transition: all .3s ease 0s;
+}
+div.profile-header-all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.profile-header-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.fan-display {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .5rem;
+    padding: .5rem;
+    margin: .5rem;
+    color: var(--text);
+}
+div.fan-display:hover {
+    background-color: var(--text);
+    color: var(--white);
+    transition: all .3s ease 0s;
+}
+div.inputbox {
+    margin: 1rem;
+}
+textarea {
+    text-decoration: none;
+    background-color: var(--background);
+    border-color: var(--text);
+    margin: .5rem;
+}

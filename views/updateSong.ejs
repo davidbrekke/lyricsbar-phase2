@@ -1,0 +1,27 @@
+<div class="updatesong-page">
+    <h2 class="updatesong">update <%= song.title %></h2>
+    <form action="/updateSong/<%= song._id %>" method="POST" class="updatesong">
+        <div class="inputBox">
+            <label for="title">title</label>
+            <input type="text" value="<%= song.title %>" name="title" id="title" required focus />
+        </div>
+        <div class="inputBox">
+            <label for="album">album</label>
+            <input type="text" value="<%= song.album %>" name="album" id="album" required />
+        </div>
+        <div class="inputBox">
+            <label for="genre">genre</label>
+            <input type="text" value="<%= song.genre %>" name="genre" id="genre" required />
+        </div>
+        <div class="inputBox">
+            <label for="year">year</label>
+            <input type="number" value="<%= song.year %>" min="1900" max="2099" name="year" id="year" required />
+        </div>
+        <div class="textarea">
+            <label for="lyrics">lyrics</label>
+            <textarea type="text" name="lyrics" id="lyrics" cols="30" rows="10" required><%= song.lyrics %></textarea>
+        </div>
+
+        <button type="submit" id='submit' name="submit">update <%= song.title %></button>
+    </form>
+</div>

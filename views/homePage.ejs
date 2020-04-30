@@ -1,0 +1,63 @@
+<div class="home-page">
+    <div class="home-page-songs">
+        <a href="/">
+            <h2 class="home-page">songs</h2>
+        </a>
+        <div class="search">
+            <form action="/" method="GET" class="song-search">
+                <label id="searchTitle" for="search">search</label>
+                <input type="text" name="songSearch" id="search" class="search" />
+                <button type="submit">search</button>
+            </form>
+        </div>
+        <% if (songs.length > 0) { %>
+        <div class="songs">
+            <% songs.forEach((song, i) => { %>
+            <a href="/songs/<%= song._id %>">
+                <div class="song">
+                    <h2><%= song.title %></h2>
+                    <h3><%= song.album %></h3>
+                    <h4>by: <%= song.artist %></h4>
+                </div>
+            </a>
+            <% }); %>
+        </div>
+        <% } else { %>
+        <div class="songs">
+            <div class="song">
+                <h2>no songs found</h2>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+    <div class="home-page-artists">
+        <a href="/">
+            <h2 class="home-page">artists</h2>
+        </a>
+        <div class="search">
+            <form action="/" method="GET" class="artist-search">
+                <label id="searchTitle" for="search">search</label>
+                <input type="text" name="artistSearch" id="search" class="search" />
+                <button type="submit">search</button>
+            </form>
+        </div>
+        <% if (artists.length > 0) { %>
+        <div class="songs">
+            <% artists.forEach((artist, i) => { %>
+            <a href="/artists/<%= artist.username %>/songs">
+                <div class="song">
+                    <h2><%= artist.username %></h2>
+                </div>
+            </a>
+            <% }); %>
+        </div>
+        <% } else { %>
+        <div class="songs">
+            <div class="song">
+                <h2>no artists found</h2>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>

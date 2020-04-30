@@ -1,0 +1,84 @@
+<div class="profile">
+    <div class="profile-header-all">
+        <div class="profile-header">
+            <a href="/me/<%= user._id %>/songs">
+                <h2 class="profile"><%= user.username %></h2>
+            </a>
+
+        </div>
+        <div class="profile-header-btns">
+            <a class="header" href="/addSong">
+                <div class="login-btn">add song</div>
+            </a>
+        </div>
+    </div>
+    <!-- IF SELECTION IS SONGS -->
+    <% if (songs) { %>
+    <div class="profile-selector">
+        <a href="/me/<%= user._id %>/songs">
+            <div id="profile-select-songs" class="profile-select selected">songs</div>
+        </a>
+        <a href="/me/<%= user._id %>/fanof">
+            <div id="profile-select-fanof" class="profile-select">fan of</div>
+        </a>
+        <a href="/me/<%= user._id %>/fans">
+            <div id="profile-select-fans" class="profile-select">fans</div>
+        </a>
+    </div>
+    <div class="profile-songs">
+        <% songs.forEach((song, i) => { %>
+        <a href="/songs/<%= song._id %>">
+            <div class="song">
+                <h2><%= song.title %></h2>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+    <% } %>
+    <!-- IF SELECTION IS FANOF -->
+    <% if (fanof) { %>
+    <div class="profile-selector">
+        <a href="/me/<%= user._id %>/songs">
+            <div id="profile-select-songs" class="profile-select">songs</div>
+        </a>
+        <a href="/me/<%= user._id %>/fanof">
+            <div id="profile-select-fanof" class="profile-select selected">fan of</div>
+        </a>
+        <a href="/me/<%= user._id %>/fans">
+            <div id="profile-select-fans" class="profile-select">fans</div>
+        </a>
+    </div>
+    <div class="profile-fan-of">
+        <% fanof.forEach((fan, i) => { %>
+        <a href="/artists/<%= fan.artist %>/songs">
+            <div class="fan-display">
+                <h2 class="fan-of"><%= fan.artist %></h2>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+    <% } %>
+    <!-- IF SELECTION IS FANS -->
+    <% if (fans) { %>
+    <div class="profile-selector">
+        <a href="/me/<%= user._id %>/songs">
+            <div id="profile-select-songs" class="profile-select">songs</div>
+        </a>
+        <a href="/me/<%= user._id %>/fanof">
+            <div id="profile-select-fanof" class="profile-select">fan of</div>
+        </a>
+        <a href="/me/<%= user._id %>/fans">
+            <div id="profile-select-fans" class="profile-select selected">fans</div>
+        </a>
+    </div>
+    <div class="profile-fan-of">
+        <% fans.forEach((fan, i) => { %>
+        <a href="/artists/<%= fan.fan %>/songs">
+            <div class="fan-display">
+                <h2 class="fan-of"><%= fan.fan %></h2>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+    <% } %>
+</div>

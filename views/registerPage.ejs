@@ -1,0 +1,39 @@
+<div class="register-page">
+    <h2 class="register">welcome to lyrics bar</h2>
+    <form action="/register" method="POST" class="register-form" oninput="checkPassword()">
+        <!-- show any messages that come back with authentication -->
+        <% if (message.length > 0) { %>
+        <div class="flash-alert"><%= message %></div>
+        <% } %>
+        <div class="inputBox">
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" focus required />
+        </div>
+        <div class="inputBox">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" required />
+        </div>
+        <div class="inputBox">
+            <label for="password2">confirm password</label>
+            <input type="password" name="password2" id="password2" required />
+        </div>
+        <button type="submit" id='submit' name="submit" disabled>register</button>
+        <a class="form-link" href="/login">
+            <h6>already a member? login here</h6>
+        </a>
+    </form>
+</div>
+
+<script>
+    function checkPassword() {
+        // console.log('in function');
+        document.getElementById('submit').setAttribute('disabled', 'disabled');
+        var pass1 = document.getElementsByName('password')[0].value;
+        var pass2 = document.getElementsByName('password2')[0].value;
+        if ((pass1 != (null || "")) && (pass2 != (null || "")) && pass1 === pass2) {
+            // console.log(pass1);
+            // console.log("match");
+            document.getElementById('submit').removeAttribute('disabled');
+        }
+    }
+</script>
